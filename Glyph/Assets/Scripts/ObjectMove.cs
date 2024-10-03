@@ -10,10 +10,12 @@ public class ObjectMove : MonoBehaviour
     private float moveSpeed;
     Rigidbody rb;
 
+    
 
     void Awake()
     {
-        
+        moveSpeed = moveSpeed / 100;
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -22,9 +24,13 @@ public class ObjectMove : MonoBehaviour
         {
             if (gameObject.transform.position != target.transform.position)
             {
+                gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, target.position, moveSpeed);  
+            }
 
-                gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, target.position, moveSpeed);
-                
+            if (gameObject.transform.position == target.transform.position)
+            {
+               rb.AddTorque(transform.forward * 2);
+                rb.useGravity = true;
             }
         }
 
