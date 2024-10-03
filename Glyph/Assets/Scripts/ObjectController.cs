@@ -9,7 +9,7 @@ public class ObjectController : MonoBehaviour
     private GameObject objectToSpawn;
 
     [SerializeField]
-    Transform startPoint, endPoint;
+    private Transform startPoint, endPoint;
 
 
     private bool objectEnabled;
@@ -36,11 +36,13 @@ public class ObjectController : MonoBehaviour
         if (!objectEnabled)
         {
             GameObject currentObj = Instantiate(objectToSpawn, startPoint.position, Quaternion.identity);
-            MoveObject(currentObj);
+           
+            if(currentObj.GetComponent<ObjectMove>() != null)
+            {
+                currentObj.GetComponent<ObjectMove>().target = endPoint;
+            }
         }
     }
 
-    void MoveObject(GameObject obj)
-    {
-           }
+           
 }
