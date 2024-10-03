@@ -41,6 +41,8 @@ public class ObjectController : MonoBehaviour
             {
                 currentObj.GetComponent<ObjectMove>().target = endPoint;
             }
+
+            //spawns an object in and assigns its target
         }
     }
 
