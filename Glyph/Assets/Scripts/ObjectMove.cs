@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjectMove : MonoBehaviour
@@ -16,6 +17,7 @@ public class ObjectMove : MonoBehaviour
     {
         moveSpeed = moveSpeed / 100;
         rb = GetComponent<Rigidbody>();
+        rb.angularVelocity = Vector3.zero;
     }
 
     void Update()
@@ -29,7 +31,9 @@ public class ObjectMove : MonoBehaviour
 
             if (gameObject.transform.position == target.transform.position)
             {
-               rb.AddTorque(transform.forward * 2);
+               rb.AddTorque(transform.up * 5);
+                rb.AddTorque(transform.forward * 5);
+
                 rb.useGravity = true;
             }
         }
