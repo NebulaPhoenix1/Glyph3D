@@ -32,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.0010489374, y: -0.707106, z: -0.707106, w: -0.0010489374}
   m_LocalPosition: {x: 12.18, y: 1.05, z: -8.51}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: -180.17, z: 0}
@@ -121,7 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 3
+  moveSpeed: 2
+  reachedDelay: 1
   xRotation: -90
 --- !u!54 &4961314827252575587
 Rigidbody:

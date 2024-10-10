@@ -11,13 +11,17 @@ public class ObjectController : MonoBehaviour
     [SerializeField]
     private Transform startPoint, endPoint;
 
+    [SerializeField]
+    private float timeBetweenSpawns = 0.75f;
+
 
     private bool objectEnabled;
 
+    private bool shouldSpawn = true;
 
     void Start()
     {
-
+        SpawnObject();
     }
 
     void Update()
@@ -31,10 +35,15 @@ public class ObjectController : MonoBehaviour
 
     }
 
+    public void SpawnNext(float timeMod)
+    {
+        StartCoroutine(Delay(timeBetweenSpawns * timeMod));
+    }
+
 
     int ChooseObject()
     {
-       return Random.Range(0, objectsToSpawn.Length);
+        return Random.Range(0, objectsToSpawn.Length);
     }
 
     void SpawnObject()
@@ -42,8 +51,8 @@ public class ObjectController : MonoBehaviour
         if (!objectEnabled)
         {
             GameObject currentObj = Instantiate(objectsToSpawn[ChooseObject()], startPoint.position, Quaternion.identity);
-           
-            if(currentObj.GetComponent<ObjectMove>() != null)
+
+            if (currentObj.GetComponent<ObjectMove>() != null)
             {
                 currentObj.GetComponent<ObjectMove>().target = endPoint;
             }
@@ -52,5 +61,14 @@ public class ObjectController : MonoBehaviour
         }
     }
 
-           
+    IEnumerator Delay(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        SpawnObject();
+
+
+    }
+
+
 }

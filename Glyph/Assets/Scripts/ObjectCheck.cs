@@ -7,14 +7,23 @@ public class ObjectCheck : MonoBehaviour
     [SerializeField]
     private string direction;
 
+    private ObjectMove objmove_cs;
 
+    private void Awake()
+    {
+        if (GetComponent<ObjectMove>())
+        {
+            objmove_cs = GetComponent<ObjectMove>();
+        }
+    }
 
     public void Check(string dir)
     {
         if (dir == direction)
         {
+            
             Debug.Log("Correct!");
-            Destroy(gameObject);
+            objmove_cs.DestroyObject(1); 
             //correct
         }
 
