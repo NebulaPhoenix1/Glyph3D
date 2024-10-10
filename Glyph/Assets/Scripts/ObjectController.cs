@@ -6,7 +6,7 @@ public class ObjectController : MonoBehaviour
 {
 
     [SerializeField]
-    private GameObject objectToSpawn;
+    private GameObject[] objectsToSpawn;
 
     [SerializeField]
     private Transform startPoint, endPoint;
@@ -31,11 +31,17 @@ public class ObjectController : MonoBehaviour
 
     }
 
+
+    int ChooseObject()
+    {
+       return Random.Range(0, objectsToSpawn.Length);
+    }
+
     void SpawnObject()
     {
         if (!objectEnabled)
         {
-            GameObject currentObj = Instantiate(objectToSpawn, startPoint.position, Quaternion.identity);
+            GameObject currentObj = Instantiate(objectsToSpawn[ChooseObject()], startPoint.position, Quaternion.identity);
            
             if(currentObj.GetComponent<ObjectMove>() != null)
             {

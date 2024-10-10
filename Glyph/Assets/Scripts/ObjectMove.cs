@@ -12,16 +12,22 @@ public class ObjectMove : MonoBehaviour
     private float moveSpeed;
     Rigidbody rb;
 
+    [SerializeField]
+    private float xRotation;
+
     private bool reachedPos = false;
 
     void Awake()
     {
+        gameObject.transform.eulerAngles = new Vector3(xRotation, 90f, 0f);
         moveSpeed = moveSpeed / 100;
         rb = GetComponent<Rigidbody>();
         rb.angularVelocity = Vector3.zero;
         rb.useGravity = false;
 
+
     }
+
 
     void Update()
     {

@@ -268,7 +268,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6297cf14887dcd443aff85f274802b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 3767225025045359665, guid: 5ad60841c14678f42944b8255d2a50af, type: 3}
+  objectsToSpawn:
+  - {fileID: 5952368702517103601, guid: 31258f84062e4234e844daea52cbebe5, type: 3}
+  - {fileID: 7961145333512966573, guid: be2a2485fcb008f4aad922c7c39f2194, type: 3}
+  - {fileID: 3767225025045359665, guid: 5ad60841c14678f42944b8255d2a50af, type: 3}
+  - {fileID: 350043139634152560, guid: bbc81e18c99294e459f139d71c575684, type: 3}
   startPoint: {fileID: 1350540796}
   endPoint: {fileID: 1546699165}
 --- !u!54 &875188458
@@ -652,7 +656,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292266062}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ac3dfdb96ba6dd49affb667241bda9a, type: 3}
   m_Name: 

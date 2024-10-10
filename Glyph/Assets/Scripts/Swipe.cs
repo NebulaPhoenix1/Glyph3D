@@ -81,13 +81,27 @@ public class Swipe : MonoBehaviour
             if (hit)
             {
                 Debug.Log("hit");
+
             }
         }
+
+
         if ((Input.GetMouseButtonUp(0)))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            GetDragDirection( ray.origin - Startmousepos);
-            
+            DraggedDirection dd = GetDragDirection(ray.origin - Startmousepos);
+           
+            if (Physics.Raycast(ray, out RaycastHit cube))
+            {
+                if (cube.collider.gameObject.GetComponent<ObjectCheck>().enabled)
+                {
+                    cube.collider.gameObject.GetComponent<ObjectCheck>().Check(dd.ToString());
+                }
+            }
+
+
+         
+
         }
     }
 }
