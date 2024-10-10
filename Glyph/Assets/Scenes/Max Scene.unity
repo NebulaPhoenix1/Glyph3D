@@ -200,7 +200,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107242524}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ac3dfdb96ba6dd49affb667241bda9a, type: 3}
   m_Name: 
@@ -555,7 +555,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -732,6 +732,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d62e1bff64181945938bd4ea2c7add2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m: {fileID: 0}
+  cube: {fileID: 434669383}
+  hit: 0
 --- !u!1 &1484793040
 GameObject:
   m_ObjectHideFlags: 0

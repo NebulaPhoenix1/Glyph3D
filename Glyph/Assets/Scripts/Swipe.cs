@@ -7,10 +7,14 @@ using UnityEngine.InputSystem;
 public class Swipe : MonoBehaviour
 {
     public MOve m;
+    private Vector3 Startmousepos;
+    public GameObject cube;
+    public bool hit;
+    private Ray ray;
     // Start is called before the first frame update
     void Start()
     {
-        
+        hit = false;    
     }
     private void Awake()
     {
@@ -66,10 +70,25 @@ public class Swipe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if ( (Input.GetMouseButtonDown(0)))
         {
-            m.
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Startmousepos = ray.origin;
+            if (Physics.Raycast(ray, out RaycastHit cube))
+            {
+                hit = true;
+                Debug.Log(Startmousepos);
+            }
+            if (hit)
+            {
+               // Debug.Log("hit");
+            }
         }
-        
+        if ((Input.GetMouseButtonUp(0)))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            GetDragDirection( ray.origin - Startmousepos);
+            
+        }
     }
 }
