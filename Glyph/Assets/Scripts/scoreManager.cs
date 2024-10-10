@@ -31,7 +31,7 @@ public class scoreManager : MonoBehaviour
         //Check for player death
         if(timeRemaining <= 0)
         {
-            Debug.Log("Death");
+            //Debug.Log("Death");
             playerDied.Invoke();
         }
 
@@ -61,7 +61,8 @@ public class scoreManager : MonoBehaviour
         //We got a glyph!
         if (roll <= glyphChance)
         {
-            Debug.Log("Glyph Get!");
+            //Debug.Log("Glyph Get!");
+            return;
         }
         //We didn't get a glyph
         else

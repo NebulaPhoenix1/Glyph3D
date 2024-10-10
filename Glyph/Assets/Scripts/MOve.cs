@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class MOve : MonoBehaviour
 {
-    public GameObject area;
+    //public GameObject area;
     [SerializeField] public Camera Camera;
     // Start is called before the first frame update
     void Start()
     {
         
     }
-     
+   
+
+
     // Update is called once per frame
     void Update()
     {
