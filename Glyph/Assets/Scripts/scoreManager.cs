@@ -61,7 +61,8 @@ public class scoreManager : MonoBehaviour
         //We got a glyph!
         if (roll <= glyphChance)
         {
-            Debug.Log("Glyph Get!");
+            //Debug.Log("Glyph Get!");
+            return;
         }
         //We didn't get a glyph
         else
