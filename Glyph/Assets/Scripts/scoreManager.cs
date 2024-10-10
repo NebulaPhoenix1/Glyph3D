@@ -31,7 +31,7 @@ public class scoreManager : MonoBehaviour
         //Check for player death
         if(timeRemaining <= 0)
         {
-            Debug.Log("Death");
+            //Debug.Log("Death");
             playerDied.Invoke();
         }
 
