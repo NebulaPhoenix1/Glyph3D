@@ -1,29 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class glyphManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //Array of bools representing whether the glyph for that index is collected
+    public bool[] glyphs;
+   
+    private void Start()
     {
-        //Ensures this game object is peristent (doesn't get destroyed on loading a new scene)
-        DontDestroyOnLoad(this.gameObject);
-        //Create dictionary of glyphs - int for glyph number and bool for whether we've collected it or not.
-        Dictionary<int, bool> glyphList = new Dictionary<int, bool>();
-        //Set up inital glyphs (22)
-        for (int i = 0; i < 22; i++)
+        glyphs = new bool[26];
+        //Ensures this game object is persistent through scenes
+        DontDestroyOnLoad(gameObject);
+        //Initalise glyphs to false (all 26)
+        for (int i = 0; i < 26; i++)
         {
-            glyphList.Add(i, false);
+            glyphs[i] = false;
         }
+    }
 
-        //Print dictionary
-        //Thank you reddit literal life savers
-        foreach (var item in glyphList)
-        {
-            Debug.Log($"Key: {item.Key}, Value: {item.Value}");
-        }
+    //Returns value at glyphs[key] so true if collected, false if not
+    public bool glyphCollectedCheck(int key)
+    {
+        return glyphs[key];
     }
 
     // Update is called once per frame
