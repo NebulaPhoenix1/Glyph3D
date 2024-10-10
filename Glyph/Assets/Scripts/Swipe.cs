@@ -8,7 +8,6 @@ public class Swipe : MonoBehaviour
 {
     public MOve m;
     private Vector3 Startmousepos;
-    public GameObject cube;
     public bool hit;
     private Ray ray;
     // Start is called before the first frame update
@@ -81,7 +80,7 @@ public class Swipe : MonoBehaviour
             }
             if (hit)
             {
-               // Debug.Log("hit");
+                Debug.Log("hit");
             }
         }
         if ((Input.GetMouseButtonUp(0)))
