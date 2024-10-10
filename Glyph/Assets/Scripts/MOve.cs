@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class MOve : MonoBehaviour
 {
-    public GameObject area;
+    //public GameObject area;
     [SerializeField] public Camera Camera;
     // Start is called before the first frame update
     void Start()
