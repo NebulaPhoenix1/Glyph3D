@@ -9,6 +9,9 @@ public class ObjectController : MonoBehaviour
     private GameObject[] objectsToSpawn;
 
     [SerializeField]
+    private GameObject omniObject;
+
+    [SerializeField]
     private Transform startPoint, endPoint;
 
     [SerializeField]
@@ -21,7 +24,14 @@ public class ObjectController : MonoBehaviour
 
     private bool objectEnabled;
 
+
+
     private bool shouldSpawn = true;
+
+    [SerializeField]
+    private int boxesBeforeOmni = 6;
+
+    private int countBeforeOmni = 0;
 
     void Start()
     {
@@ -56,16 +66,36 @@ public class ObjectController : MonoBehaviour
 
     void SpawnObject()
     {
+      
+        
         if (!objectEnabled)
         {
-            GameObject currentObj = Instantiate(objectsToSpawn[ChooseObject()], startPoint.position, Quaternion.identity);
-
-            if (currentObj.GetComponent<ObjectMove>() != null)
+            if (countBeforeOmni != boxesBeforeOmni)
             {
-                currentObj.GetComponent<ObjectMove>().target = endPoint;
+
+                GameObject currentObj = Instantiate(objectsToSpawn[ChooseObject()], startPoint.position, Quaternion.identity);
+
+                if (currentObj.GetComponent<ObjectMove>() != null)
+                {
+                    currentObj.GetComponent<ObjectMove>().target = endPoint;
+                }
+
+                //spawns an object in and assigns its target
+                countBeforeOmni++;
             }
 
-            //spawns an object in and assigns its target
+            else
+            {
+                GameObject currentObj = Instantiate(omniObject, startPoint.position, Quaternion.identity);
+
+                if (currentObj.GetComponent<ObjectMove>() != null)
+                {
+                    currentObj.GetComponent<ObjectMove>().target = endPoint;
+                }
+
+                //spawns an object in and assigns its target
+                countBeforeOmni = 0;
+            }
         }
     }
 
