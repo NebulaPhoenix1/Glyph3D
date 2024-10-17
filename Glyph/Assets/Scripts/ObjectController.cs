@@ -14,6 +14,10 @@ public class ObjectController : MonoBehaviour
     [SerializeField]
     private float timeBetweenSpawns = 0.75f;
 
+    [SerializeField]
+    private float startMoveSpeed = 1, maxMoveSpeed = 5;
+
+    public float curMoveSpeed;
 
     private bool objectEnabled;
 
@@ -21,6 +25,7 @@ public class ObjectController : MonoBehaviour
 
     void Start()
     {
+        curMoveSpeed = startMoveSpeed;
         SpawnObject();
     }
 
@@ -32,12 +37,15 @@ public class ObjectController : MonoBehaviour
         }
 
 
-
     }
 
     public void SpawnNext(float timeMod)
     {
         StartCoroutine(Delay(timeBetweenSpawns * timeMod));
+        if (curMoveSpeed < maxMoveSpeed)
+        {
+            curMoveSpeed += 0.05f;
+        }
     }
 
 
