@@ -27,12 +27,8 @@ public class ObjectMove : MonoBehaviour
     void Awake()
     {
         gameObject.transform.eulerAngles = new Vector3(xRotation, 90f, 0f);
-        moveSpeed = moveSpeed / 100;
-        rb = GetComponent<Rigidbody>();
-        rb.angularVelocity = Vector3.zero;
-        rb.useGravity = false;
 
-        if(GameObject.FindAnyObjectByType<ObjectController>() != null )
+        if (GameObject.FindAnyObjectByType<ObjectController>() != null)
         {
             objcontroller_cs = GameObject.FindObjectOfType<ObjectController>();
         }
@@ -40,6 +36,13 @@ public class ObjectMove : MonoBehaviour
         {
             Debug.Log("Couldn't find object controller");
         }
+
+
+        moveSpeed = objcontroller_cs.curMoveSpeed / 100;
+        rb = GetComponent<Rigidbody>();
+        rb.angularVelocity = Vector3.zero;
+        rb.useGravity = false;
+
 
 
     }
