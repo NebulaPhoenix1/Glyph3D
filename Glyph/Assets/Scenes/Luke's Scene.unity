@@ -200,6 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1130098069}
   - component: {fileID: 1130098068}
+  - component: {fileID: 1130098070}
   m_Layer: 0
   m_Name: GlyphManager
   m_TagString: Untagged
@@ -234,6 +235,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1130098070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130098067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1098da703cca1394a941e2b5f5c5f48c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1130098068}
+  glyphs:
+  - {fileID: 132347005514991519, guid: 200cb76964e0f454c9a598086007b2eb, type: 3}
+  - {fileID: 4001911651729061969, guid: c6a76bd440d19d74fa8076c6ce304399, type: 3}
+  - {fileID: 3582176239781883119, guid: 4cc82b411df2a554f9a4345ae463e33b, type: 3}
+  - {fileID: 4805395310718828774, guid: 53d823402666012479ee0a76829e2da6, type: 3}
+  - {fileID: 5125227700241185418, guid: 7623380ff2353f84ba6f49787ef75833, type: 3}
+  - {fileID: 3374810028883862076, guid: a478a8fe96719ef49875417cfa463f1a, type: 3}
+  - {fileID: 4770351110528456387, guid: 85d35ee6ad9395c4db7c3456d9d8930f, type: 3}
+  - {fileID: 1816472039143771433, guid: 7e2cc9d4b36157b42add1b7f57430e4f, type: 3}
+  - {fileID: 8593603083867138488, guid: 446b29decc46ae444bc8c50b1964e2fc, type: 3}
+  - {fileID: 1625111471222307276, guid: e74a6a9e4cc791b43a65f99b2fa3af7f, type: 3}
+  - {fileID: 3836018613673565575, guid: 9f712fd4b14fb9b4fbcbcacb89f989f6, type: 3}
+  - {fileID: 728383080728931573, guid: 3eb33d76eac18fa4c927029f305bf21b, type: 3}
+  - {fileID: 6544135245021927001, guid: c3bcc1a2cf4b26e41a1ecad52ae4a82c, type: 3}
+  - {fileID: 1679306344367293423, guid: 10c92ea1f41c1ef40a28178c9c1055ac, type: 3}
+  - {fileID: 5615989379336070213, guid: 4de1b273aee786244befad34d54cb4e9, type: 3}
+  - {fileID: 3549266762164594735, guid: f3da24890574c494182692bb27e4306d, type: 3}
+  - {fileID: 4673541647002728663, guid: a7f1742b9e46c794e9e8c730bc153272, type: 3}
+  - {fileID: 5285874785926860620, guid: 850b6c1e4c336e849824974d0abab9e6, type: 3}
+  - {fileID: 6348033036806151896, guid: aea6e32073e024f4cba9708ed2cccff9, type: 3}
+  - {fileID: 7322042428236581488, guid: 4db20732b45230442a16b4fdf63ebd09, type: 3}
+  - {fileID: 855616969738223163, guid: ffdd16b45b784f24ba811e9458342de9, type: 3}
+  - {fileID: 8947380681239638845, guid: ed7535a82fb53c947bd4efed1bfcabe2, type: 3}
+  - {fileID: 4789563643183148998, guid: 08b9dea2ea38f8b4fbd5e50ebe978139, type: 3}
+  - {fileID: 2712612545050153582, guid: 54fa56b4faeb82247a465e8cce4db677, type: 3}
+  - {fileID: 2405488855051472146, guid: e60ab8c12631e934dac671ad039c546f, type: 3}
+  - {fileID: 8817930211953137366, guid: 1114ad53ce1a9b743a8a39269d9f1adb, type: 3}
+  spawnPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1695104097
 GameObject:
   m_ObjectHideFlags: 0

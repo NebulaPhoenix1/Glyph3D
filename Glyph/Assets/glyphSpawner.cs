@@ -5,7 +5,8 @@ using UnityEngine;
 public class glyphSpawner : MonoBehaviour
 {
     [SerializeField] glyphManager manager;
-    //[SerializeField] GameObject[] glyphs;
+    [SerializeField] GameObject[] glyphs;
+    [SerializeField] Vector3 spawnPos;
     List<int> remainingGlyphs;
     float spawnChance = 0.005f;
     
@@ -26,12 +27,12 @@ public class glyphSpawner : MonoBehaviour
         //Get remaining glyphs
         getRemainingGlyphs();
         //If there are remaining glyphs
-        Debug.Log(remainingGlyphs.Count);
+        //Debug.Log(remainingGlyphs.Count);
         if(remainingGlyphs.Count > 0)
         {
             //Choose random remaining glyph and spawn it
             int choice = Random.Range(0, remainingGlyphs.Count);
-            //Instantiate(glyphs[choice]);
+            Instantiate(glyphs[choice], spawnPos, Quaternion.identity);
             manager.collectGlyph(remainingGlyphs[choice]);
             //Update remaining glyphs list
             getRemainingGlyphs();
