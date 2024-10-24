@@ -366,7 +366,7 @@ MonoBehaviour:
   startMoveSpeed: 1
   maxMoveSpeed: 4
   curMoveSpeed: 0
-  boxesBeforeOmni: 6
+  boxesBeforeOmni: 1
 --- !u!4 &802420742
 Transform:
   m_ObjectHideFlags: 0
@@ -572,6 +572,10 @@ PrefabInstance:
       propertyPath: maxTime
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6941925113916695142, guid: 912615e94ce818845a127b987b940321, type: 3}
+      propertyPath: scoreIncrement
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -723,7 +727,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.047169805, g: 0.01001246, b: 0.013676348, a: 0}
+  m_BackGroundColor: {r: 0.13608047, g: 0.17840093, b: 0.20754719, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

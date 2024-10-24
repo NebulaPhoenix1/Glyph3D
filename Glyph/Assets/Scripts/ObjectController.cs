@@ -24,7 +24,7 @@ public class ObjectController : MonoBehaviour
 
     private bool objectEnabled;
 
-
+    private scoreManager scoreManager;
 
     private bool shouldSpawn = true;
 
@@ -37,6 +37,10 @@ public class ObjectController : MonoBehaviour
     {
         curMoveSpeed = startMoveSpeed;
         SpawnObject();
+        if (GameObject.FindObjectOfType<scoreManager>())
+        {
+            scoreManager = GameObject.FindObjectOfType<scoreManager>();
+        }
     }
 
     void Update()
@@ -62,6 +66,11 @@ public class ObjectController : MonoBehaviour
     int ChooseObject()
     {
         return Random.Range(0, objectsToSpawn.Length);
+    }
+
+    public void ResetCombo()
+    {
+        scoreManager.resetCombo();
     }
 
     void SpawnObject()

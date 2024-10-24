@@ -17,6 +17,11 @@ public class scoreManager : MonoBehaviour
     public float score;
     private float glyphChance = 0.05f;
 
+    [SerializeField]
+    private float scoreIncrement = 1;
+
+    private float combo = 1;
+
     public UnityEvent playerDied;
 
     /* Note to self: we can use a dictionary with an int property to keep track of which glyph is which and a bool property to track if its got or not */
@@ -46,12 +51,22 @@ public class scoreManager : MonoBehaviour
     public void scoreIncrease()
     {
         //Update Score Text
-        score++;
+        score += scoreIncrement * combo;
         scoreText.text = "Score " + score;
         //Reset survival time and bar
         timeRemaining = maxTime;
         //Fill amount goes from 0-1
         survivalTime.fillAmount = 1;
+    }
+
+    public void addCombo()
+    {
+        combo += 0.1f;
+    }
+
+    public void resetCombo()
+    {
+        combo = 1;
     }
 
     //Function which gets called everytime score increases

@@ -9,7 +9,7 @@ public class ObjectCheck : MonoBehaviour
 
     private ObjectMove objmove_cs;
 
-    private int health = 4;
+    private int health = 8;
 
     private scoreManager scoreManager;
 
@@ -32,11 +32,14 @@ public class ObjectCheck : MonoBehaviour
         {
             if (health != 0)
             {
+                scoreManager.scoreIncrease();
+                scoreManager.addCombo();
                 health--;
             }
 
             else
                 objmove_cs.DestroyObject(1);
+
 
         }
 
