@@ -824,6 +824,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlyphManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6017360686669709582, guid: 1cc66faa2d2bb98499c25fc32dd26865, type: 3}
+      propertyPath: resetOnStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7678612213240361032, guid: 1cc66faa2d2bb98499c25fc32dd26865, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -52,40 +52,15 @@ public class ObjectCheck : MonoBehaviour
                 scoreManager.scoreIncrease();
                 objmove_cs.DestroyObject(1);
                 //correct
+                //Chance of spawning glyph
+                scoreManager.glyphRoll();
             }
 
             else
-<<<<<<< HEAD
                 objmove_cs.DestroyObject(1);
 
 
         }
-
-        if (dir == direction)
-        {
-
-            Debug.Log("Correct!");
-            scoreManager.scoreIncrease();
-            objmove_cs.DestroyObject(1);
-            //Chance of spawning glyph
-            scoreManager.glyphRoll();
-            //correct
-        }
-
-        else
-        {
-            Debug.Log("wrong");
-            //wrong!
-=======
-            {
-                Debug.Log("wrong");
-                //wrong!
->>>>>>> 5f64e2859db839405d891c11bc9c7e02963193a8
-
-            }
-        }
-
-
 
     }
 
