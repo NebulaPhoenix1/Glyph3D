@@ -16,6 +16,11 @@ public class GameSceneManager : MonoBehaviour
         StartCoroutine(Delay(1)); // Change the number based on the scene you want to load
     }
 
+    public void Help()
+    {
+        StartCoroutine(Delay(2)); // Change the number based on the scene you want to load
+    }
+
     IEnumerator Delay(int sceneNumber)
     {
         yield return new WaitForSeconds(2f);
