@@ -27,17 +27,35 @@ public class ObjectCheck : MonoBehaviour
 
     public void Check(string dir)
     {
-
-        if(direction == "Omni")
+        if (objmove_cs.canHit == true)
         {
-            if (health != 0)
+
+            if (direction == "Omni")
             {
+                if (health != 0)
+                {
+                    scoreManager.scoreIncrease();
+                    scoreManager.addCombo();
+                    health--;
+                }
+
+                else
+                    objmove_cs.DestroyObject(1);
+
+
+            }
+
+            if (dir == direction)
+            {
+
+                Debug.Log("Correct!");
                 scoreManager.scoreIncrease();
-                scoreManager.addCombo();
-                health--;
+                objmove_cs.DestroyObject(1);
+                //correct
             }
 
             else
+<<<<<<< HEAD
                 objmove_cs.DestroyObject(1);
 
 
@@ -58,7 +76,13 @@ public class ObjectCheck : MonoBehaviour
         {
             Debug.Log("wrong");
             //wrong!
+=======
+            {
+                Debug.Log("wrong");
+                //wrong!
+>>>>>>> 5f64e2859db839405d891c11bc9c7e02963193a8
 
+            }
         }
 
 
