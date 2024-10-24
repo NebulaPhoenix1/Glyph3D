@@ -9,13 +9,16 @@ public class scoreManager : MonoBehaviour
     [Header("UI Element References")]
     [SerializeField] TMP_Text scoreText;
     [SerializeField] Image survivalTime;
+    [SerializeField] glyphSpawner spawner;
 
+    [Header("Game Values")]
     [SerializeField]
     private float maxTime = 6f;
     private float timeRemaining;
     private float fillAmount;
     public float score;
-    private float glyphChance = 0.05f;
+    private float minGlyphChance = 0.05f;
+    private float glyphChance;
 
     [SerializeField]
     private float scoreIncrement = 1;
@@ -30,6 +33,7 @@ public class scoreManager : MonoBehaviour
     void Start()
     {
         timeRemaining = maxTime;
+        glyphChance = minGlyphChance;
     }
 
     private void FixedUpdate()
@@ -45,7 +49,6 @@ public class scoreManager : MonoBehaviour
         timeRemaining = timeRemaining - Time.deltaTime;
         fillAmount = timeRemaining/maxTime;
         survivalTime.fillAmount = fillAmount;
-        glyphRoll();
     }
     
     public void scoreIncrease()
@@ -71,13 +74,16 @@ public class scoreManager : MonoBehaviour
 
     //Function which gets called everytime score increases
     //Has a chance of giving a glyph and the chance increases over time
-    private void glyphRoll()
+    public void glyphRoll()
     {
+        //Debug.Log("glyphRoll called");
         float roll = Random.Range(0f, 1f);
-        //We got a glyph!
+        //We got a glyph and reset glyph chance
         if (roll <= glyphChance)
         {
-            //Debug.Log("Glyph Get!");
+            Debug.Log("Glyph Get!");
+            spawner.spawnGlyph();
+            glyphChance = minGlyphChance;
             return;
         }
         //We didn't get a glyph
@@ -86,7 +92,7 @@ public class scoreManager : MonoBehaviour
             //If glyph chance is still small and we didn't get one, increase chance
             if(glyphChance < 0.3f)
             {
-                glyphChance += 0.0005f;
+                glyphChance += 0.05f;
             }
         }
 

@@ -49,6 +49,8 @@ public class ObjectCheck : MonoBehaviour
             Debug.Log("Correct!");
             scoreManager.scoreIncrease();
             objmove_cs.DestroyObject(1);
+            //Chance of spawning glyph
+            scoreManager.glyphRoll();
             //correct
         }
 
