@@ -14,6 +14,7 @@ public class ObjectMove : MonoBehaviour
     [SerializeField]
     private float reachedDelay = 1f;
 
+    
 
     Rigidbody rb;
 

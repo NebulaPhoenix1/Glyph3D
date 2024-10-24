@@ -272,12 +272,14 @@ MonoBehaviour:
   - {fileID: 7961145333512966573, guid: be2a2485fcb008f4aad922c7c39f2194, type: 3}
   - {fileID: 3767225025045359665, guid: 5ad60841c14678f42944b8255d2a50af, type: 3}
   - {fileID: 350043139634152560, guid: bbc81e18c99294e459f139d71c575684, type: 3}
+  omniObject: {fileID: 350043139634152560, guid: fb5f82c561224ad4db9a4c82eace4ba5, type: 3}
   startPoint: {fileID: 1350540796}
   endPoint: {fileID: 1546699165}
   timeBetweenSpawns: 0.75
   startMoveSpeed: 1
   maxMoveSpeed: 4
   curMoveSpeed: 0
+  boxesBeforeOmni: 6
 --- !u!1 &1046458011
 GameObject:
   m_ObjectHideFlags: 0

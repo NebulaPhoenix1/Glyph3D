@@ -9,6 +9,8 @@ public class ObjectCheck : MonoBehaviour
 
     private ObjectMove objmove_cs;
 
+    private int health = 4;
+
     private void Awake()
     {
         if (GetComponent<ObjectMove>())
@@ -19,11 +21,24 @@ public class ObjectCheck : MonoBehaviour
 
     public void Check(string dir)
     {
+
+        if(direction == "Omni")
+        {
+            if (health != 0)
+            {
+                health--;
+            }
+
+            else
+                objmove_cs.DestroyObject(1);
+
+        }
+
         if (dir == direction)
         {
-            
+
             Debug.Log("Correct!");
-            objmove_cs.DestroyObject(1); 
+            objmove_cs.DestroyObject(1);
             //correct
         }
 
@@ -33,6 +48,9 @@ public class ObjectCheck : MonoBehaviour
             //wrong!
 
         }
+
+
+
     }
 
  
