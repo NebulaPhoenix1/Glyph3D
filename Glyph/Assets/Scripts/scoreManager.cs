@@ -10,7 +10,8 @@ public class scoreManager : MonoBehaviour
     [SerializeField] TMP_Text scoreText;
     [SerializeField] Image survivalTime;
 
-    private float maxTime = 3f;
+    [SerializeField]
+    private float maxTime = 6f;
     private float timeRemaining;
     private float fillAmount;
     public float score;
