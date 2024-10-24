@@ -14,7 +14,7 @@ public class ObjectMove : MonoBehaviour
     [SerializeField]
     private float reachedDelay = 1f;
 
-    
+    public bool canHit = true;
 
     Rigidbody rb;
 
@@ -94,6 +94,7 @@ public class ObjectMove : MonoBehaviour
         rb.useGravity = true;
         rb.AddTorque(transform.up * 5);
         rb.AddTorque(transform.forward * 5);
+        canHit = false;
 
         //adds a spin and gravity to the object when it reaches its target
 
