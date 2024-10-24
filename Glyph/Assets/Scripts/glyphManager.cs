@@ -16,18 +16,23 @@ public class glyphManager : MonoBehaviour
 {
     //File path of saved glyphs
     string path = Application.dataPath + "/Glyphs.json";
+    private glyphSpawner spawner;
+    [SerializeField] bool resetOnStart;
 
     //Array of bools representing whether the glyph for that index is collected
     private bool[] glyphs;
 
     private void Start()
     {
+        spawner = GetComponent<glyphSpawner>();
         //Initalise array to be of size 26
         glyphs = new bool[26];
         //Ensures this game object is persistent through scenes
         DontDestroyOnLoad(gameObject);
         //Read save data
         readJSON();
+        //Reset JSON if resetOnStart is true
+        if (resetOnStart) { resetJSON(); }
     }
 
     //Returns value at glyphs[key] so true if collected, false if not

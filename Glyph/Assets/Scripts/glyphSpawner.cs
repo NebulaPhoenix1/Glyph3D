@@ -10,18 +10,6 @@ public class glyphSpawner : MonoBehaviour
     List<int> remainingGlyphs;
     float spawnChance = 0.005f;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //spawnGlyph();
-    }
-
     public void spawnGlyph()
     {
         //Get remaining glyphs
@@ -41,8 +29,7 @@ public class glyphSpawner : MonoBehaviour
         else
         {
             Debug.LogWarning("No Glyphs Remaining");
-        }
-        
+        }        
     }
 
     private void getRemainingGlyphs()
