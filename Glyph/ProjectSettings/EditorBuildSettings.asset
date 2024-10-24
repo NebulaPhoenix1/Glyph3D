@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Toby scene main menu.unity
+    guid: e052de7e9e90e4745b79f94ea3027110
+  - enabled: 1
+    path: Assets/Scenes/FinalScenes/MainGame.unity
+    guid: ed819392d7e195f4b8bd25780bd88431
   m_configObjects: {}
