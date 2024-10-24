@@ -568,6 +568,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Game Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6941925113916695142, guid: 912615e94ce818845a127b987b940321, type: 3}
+      propertyPath: maxTime
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

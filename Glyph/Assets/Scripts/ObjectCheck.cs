@@ -11,11 +11,17 @@ public class ObjectCheck : MonoBehaviour
 
     private int health = 4;
 
+    private scoreManager scoreManager;
+
     private void Awake()
     {
         if (GetComponent<ObjectMove>())
         {
             objmove_cs = GetComponent<ObjectMove>();
+        }
+        if(GameObject.FindObjectOfType<scoreManager>())
+        {
+            scoreManager = GameObject.FindObjectOfType<scoreManager>();
         }
     }
 
@@ -38,6 +44,7 @@ public class ObjectCheck : MonoBehaviour
         {
 
             Debug.Log("Correct!");
+            scoreManager.scoreIncrease();
             objmove_cs.DestroyObject(1);
             //correct
         }
