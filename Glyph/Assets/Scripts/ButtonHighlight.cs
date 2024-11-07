@@ -8,18 +8,21 @@ using TMPro;
 [RequireComponent(typeof(Button))]
 public class ButtonHighlight : MonoBehaviour
 {
-    //defines both text/image component so they can be used for changing image/text colour later.
+    //defines both textmeshpro component so they can be used for changing image/text colour later.
     public TextMeshProUGUI textcomponent;
-    public Image imagecomponent;
+    float r;  // red component
+    float g;  // green component
+    float b;  // blue component
+    public Color32 lightblue;
+    private void Start()
+    {
+        lightblue = new Color(93, 226, 231);
+    }
 
+    //
     public void Replay()
     {
-        textcomponent.color = Color.blue;
-    }
-
-    public void OnPointerExit(PointerEventData eventData) 
-    {
-        textcomponent.color = Color.gray;
-        imagecomponent.enabled = false;
+        textcomponent.color = Color.cyan;
     }
 }
+//#26FFFF
